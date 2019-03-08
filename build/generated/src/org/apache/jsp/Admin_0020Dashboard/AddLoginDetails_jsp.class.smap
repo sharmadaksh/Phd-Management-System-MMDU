@@ -1,0 +1,18 @@
+SMAP
+AddLoginDetails_jsp.java
+JSP
+*S JSP
+*F
++ 0 AddLoginDetails.jsp
+Admin Dashboard/AddLoginDetails.jsp
++ 1 AdminHome.jsp
+Admin Dashboard/AdminHome.jsp
++ 2 Footer.jsp
+Admin Dashboard/Footer.jsp
+*L
+5,82:51
+5#1,162:133
+86#0,69:294
+5#2,37:363
+154#0,7:399
+*E

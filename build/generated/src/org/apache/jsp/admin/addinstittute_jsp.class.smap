@@ -1,0 +1,18 @@
+SMAP
+addinstittute_jsp.java
+JSP
+*S JSP
+*F
++ 0 addinstittute.jsp
+admin/addinstittute.jsp
++ 1 adminhome.jsp
+admin/adminhome.jsp
++ 2 footer.jsp
+admin/footer.jsp
+*L
+5,13:50
+5#1,156:63
+17#0,28:218
+1#2,8:246
+44#0,7:253
+*E

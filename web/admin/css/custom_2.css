@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+.image{
+	backgound-color="#18BC9C;
+}
+
+
+.aaa{
+	border-radius:5px;
+	text-align:center;
+	
+}
+
+.bbb{
+	border:1px solid white;
+	border-radius:5px;
+	
+}
+
+.book{
+
+}
+
+.button{
+	border:1px solid #008055;
+	background-color:#008055;
+	border-radius:5px;
+	color:#ffffff;
+}

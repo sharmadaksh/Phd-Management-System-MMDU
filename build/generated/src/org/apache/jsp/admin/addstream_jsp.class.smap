@@ -1,0 +1,19 @@
+SMAP
+addstream_jsp.java
+JSP
+*S JSP
+*F
++ 0 addstream.jsp
+admin/addstream.jsp
++ 1 AdminHome.jsp
+admin/AdminHome.jsp
++ 2 Footer.jsp
+admin/Footer.jsp
+*L
+5:50
+10,15:51
+5#1,156:66
+24#0,28:221
+1#2,8:249
+51#0,7:256
+*E

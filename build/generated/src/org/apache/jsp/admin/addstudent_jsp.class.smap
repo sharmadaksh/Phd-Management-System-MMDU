@@ -1,0 +1,26 @@
+SMAP
+addstudent_jsp.java
+JSP
+*S JSP
+*F
++ 0 addstudent.jsp
+admin/addstudent.jsp
++ 1 adminhome.jsp
+admin/adminhome.jsp
++ 2 footer.jsp
+admin/footer.jsp
+*L
+5,18:53
+5#1,156:71
+22#0,47:226
+69,7:274
+75,12:281
+87,7:294
+93,12:301
+105,7:314
+111,12:321
+123,7:334
+129,22:341
+1#2,8:363
+150#0,7:370
+*E
