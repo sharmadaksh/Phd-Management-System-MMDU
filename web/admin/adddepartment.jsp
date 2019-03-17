@@ -23,7 +23,7 @@
       <h2>Department Creation Portal</h2>
     <div class="row">
       <div class="col-25">
-        <label for="stepid">Department ID</label>
+        <label for="deptid">Department ID</label>
       </div>
       <div class="col-75">
         <input type="text" id="deptid" name="deptid" placeholder="Enter Department Id..">
@@ -51,8 +51,6 @@
                                 
                     }                    
                 }
-                
-                
               %>
         </select>
       </div>

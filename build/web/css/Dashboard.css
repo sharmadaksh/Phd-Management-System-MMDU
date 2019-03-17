@@ -21,7 +21,22 @@ input[type=text], select, textarea{
     box-sizing: border-box;
     resize: vertical;
 }
-
+input[type=date]{
+    width: 70%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+input[type=file]{
+    width: 70%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;

@@ -3,7 +3,10 @@
     Created on : Mar 2, 2018, 10:53:49 AM
     Author     : HP PAVILION
 --%>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	 
 
 
 <style>
@@ -123,15 +126,17 @@ p {
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
-    <a href="WelcomeAdmin.jsp">Home</a><br>
-    <a href="addlogindetails.jsp">Login Creation</a><br>
-    <a href="addphdstep.jsp">Phd Step Addition</a><br>
-  <a href="addstream.jsp">Stream Creation</a><br>
-  <a href="addstudent.jsp">Student Creation</a><br>
-  <a href="viewlogindetails.do">View Login Details</a><br>
-  <a href="viewstreamdetails.do">View Stream Details</a><br>
-  <a href="viewphdsteps.do">View Ph.D Steps</a><br>
-  <a href="http://localhost:8888/Final Phd Management System/">Logout</a><br>
+    <a href="WelcomeAdmin.jsp"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;Home</a><br>
+    <a href="addlogindetails.jsp"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;Login Creation</a><br>
+    <a href="addphdstep.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Phd Step Addition</a><br>
+  <a href="addstream.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Stream Creation</a><br>
+  <a href="addstudent.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Student Creation</a><br>
+  <a href="addinstittute.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Institute Creation</a><br>
+  <a href="adddepartment.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Department Creation</a><br>
+  <a href="viewlogindetails.do"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;View Login Details</a><br>
+  <a href="viewstreamdetails.do"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;View Stream Details</a><br>
+  <a href="viewphdsteps.do"><span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;&nbsp;View Ph.D Steps</a><br>
+  <a href="http://localhost:8888/Final Phd Management System/"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;&nbsp;Logout</a><br>
 </div>
 
 <div id="main">

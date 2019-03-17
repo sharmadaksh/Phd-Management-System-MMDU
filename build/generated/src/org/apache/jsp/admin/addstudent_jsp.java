@@ -3,9 +3,13 @@ package org.apache.jsp.admin;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.dao.DepartmentinfoDAO;
+import model.to.DepartmentinfoTO;
 import utility.YearList;
 import utility.MonthList;
 import java.util.List;
+import model.dao.InstituteinfoDAO;
+import model.to.InstituteinfoTO;
 
 public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -56,6 +60,10 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -64,10 +72,10 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Student Addition | Admin</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <form method=\"post\" action=\"createstudent\">\n");
-      out.write("        <div>\n");
+      out.write("        <form method=\"post\" enctype=\"multipart/form-data\" action=\"createstudent\">\n");
       out.write("            <div>\n");
-      out.write("                ");
+      out.write("                <div>\n");
+      out.write("                    ");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -194,6 +202,8 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <a href=\"addphdstep.jsp\">Phd Step Addition</a><br>\n");
       out.write("  <a href=\"addstream.jsp\">Stream Creation</a><br>\n");
       out.write("  <a href=\"addstudent.jsp\">Student Creation</a><br>\n");
+      out.write("  <a href=\"addinstittute.jsp\">Institute Creation</a><br>\n");
+      out.write("  <a href=\"adddepartment.jsp\">Department Creation</a><br>\n");
       out.write("  <a href=\"viewlogindetails.do\">View Login Details</a><br>\n");
       out.write("  <a href=\"viewstreamdetails.do\">View Stream Details</a><br>\n");
       out.write("  <a href=\"viewphdsteps.do\">View Ph.D Steps</a><br>\n");
@@ -224,90 +234,94 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</script>\n");
       out.write("     \n");
       out.write("\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"container\" align=\"center\" style=\"border-radius: 20px;\">\n");
-      out.write("  \n");
-      out.write("                <h2 style=\"color:#000\">Student Creation Portal</h2>\n");
-      out.write("      <hr style=\"color:#17a2b8;\">\n");
-      out.write("      \n");
-      out.write("    <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"studentid\">Student Id</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <input type=\"text\" style=\"border-radius: 20px;\" id=\"studentid\" name=\"studentid\" placeholder=\"Enter Student Id..\">\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"uname\">Student Username</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <input type=\"text\" id=\"uname\" name=\"uname\" style=\"border-radius: 20px;\" placeholder=\"Enter Student Userame..\">\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"name\">Student Name</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <input type=\"text\" id=\"name\" name=\"name\" style=\"border-radius: 20px;\" placeholder=\"Enter Student Name..\">\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"fname\">Father Name</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <input type=\"text\" id=\"fname\" name=\"fname\" style=\"border-radius: 20px;\" placeholder=\"Enter Father Name..\">\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"sessbegmnth\">Session Begin Month</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <select name=\"sessbegmnth\" id=\"sessbegmnth\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"container\" align=\"center\" style=\"border-radius: 20px;\">\n");
+      out.write("\n");
+      out.write("                    <h2 style=\"color:#000\">Student Creation Portal</h2>\n");
+      out.write("                    <hr style=\"color:#17a2b8;\">\n");
+      out.write("\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"studentid\">Student Reg No</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" style=\"border-radius: 20px;\" id=\"studentid\" name=\"studentid\" placeholder=\"Enter Student Id..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"uname\">Student Username</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"uname\" name=\"uname\" style=\"border-radius: 20px;\" placeholder=\"Enter Student Userame..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"name\">Student Name</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"name\" name=\"name\" style=\"border-radius: 20px;\" placeholder=\"Enter Student Name..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"fname\">Father Name</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"fname\" name=\"fname\" style=\"border-radius: 20px;\" placeholder=\"Enter Father Name..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"sessbegmnth\">Session Begin Month</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select name=\"sessbegmnth\" id=\"sessbegmnth\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
       out.write("                                <option value=\"\">Choose Any Month</option>\n");
       out.write("                                ");
 
                                     List<String> sessbegmnth = MonthList.getMonths();
+                                    int count = 1;
                                     for (String month : sessbegmnth) {
-                                        out.println("<option value=\"" + month + "\">");
+                                        out.println("<option value=\"" + count + "\">");
                                         out.println(month);
                                         out.println("</option>");
+                                        count++;
                                     }
                                 
       out.write("\n");
       out.write("                            </select>\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"sessendmnth\">Session End Month</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <select name=\"sessbegmnth\" id=\"sessbegmnth\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"sessendmnth\">Session End Month</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select name=\"sessendmnth\" id=\"sessbegmnth\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
       out.write("                                <option value=\"\">Choose Any Month</option>\n");
       out.write("                                ");
 
                                     List<String> sessendmnth = MonthList.getMonths();
+                                    count = 1;
                                     for (String month : sessendmnth) {
-                                        out.println("<option value=\"" + month + "\">");
+                                        out.println("<option value=\"" + count + "\">");
                                         out.println(month);
                                         out.println("</option>");
+                                        count++;
                                     }
                                 
       out.write("\n");
       out.write("                            </select>\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"sessbegyr\">Session Begin Year</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <select name=\"sessbegyr\" id=\"sessbegyr\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"sessbegyr\">Session Begin Year</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select name=\"sessbegyr\" id=\"sessbegyr\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
       out.write("                                <option value=\"\">Choose Any Year</option>\n");
       out.write("                                ");
 
@@ -320,14 +334,14 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
                                 
       out.write("\n");
       out.write("                            </select>\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"sessendyr\">Session End Year</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <select name=\"sessendyr\" id=\"sessendyr\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"sessendyr\">Session End Year</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select name=\"sessendyr\" id=\"sessendyr\" class=\"wrap-input100 validate-input m-b-25\" style=\"text-decoration: none\">\n");
       out.write("                                <option value=\"\">Choose Any Year</option>\n");
       out.write("                                ");
 
@@ -340,26 +354,135 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
                                 
       out.write("\n");
       out.write("                            </select>\n");
-      out.write("      \n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <div class=\"row\">\n");
-      out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"streamid\">Stream Id</label>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"col-75\">\n");
-      out.write("        <input type=\"text\" id=\"streamid\" name=\"streamid\" style=\"border-radius: 20px;\" placeholder=\"Enter Stream Id..\">\n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("      <br>\n");
-      out.write("      <hr>\n");
-      out.write("       <div class=\"row\">\n");
-      out.write("        <br><input type=\"submit\" value=\"Create Student\">\n");
-      out.write("    </div>\n");
-      out.write("      \n");
-      out.write("</div>\n");
-      out.write("            <div color=\"cyan\">\n");
-      out.write("                ");
+      out.write("\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"contact\">Contact Number</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"contact\" name=\"contact\" style=\"border-radius: 20px;\" placeholder=\"Enter Contact Number..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"aadhar\">Aadhar Number</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"aadhar\" name=\"aadhar\" style=\"border-radius: 20px;\" placeholder=\"Enter Aadhar Number..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"pan\">Pan Number</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"pan\" name=\"pan\" style=\"border-radius: 20px;\" placeholder=\"Enter Pan Number..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"category\">Category</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select name=\"category\" id=\"category\">\n");
+      out.write("                                <option value=\"\">Select Any Category</option>\n");
+      out.write("                                <option value=\"General\">General</option>\n");
+      out.write("                                <option value=\"Sc\">SC</option>\n");
+      out.write("                                <option value=\"St\">ST</option>\n");
+      out.write("                                <option value=\"Obc\">OBC</option>\n");
+      out.write("                            </select>    \n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"institute\">Institute</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select id=\"instname\" name=\"instname\">\n");
+      out.write("                                <option value=\"\">Choose Institute</option>\n");
+      out.write("                                ");
+
+                                    List<InstituteinfoTO> all_details = new InstituteinfoDAO().getAllRecord();
+                                    if (all_details != null) {
+                                        for (InstituteinfoTO it : all_details) {
+                                            out.println("<option value=\"" + it.getInstid() + "\">" + it.getInstname() + "</option>");
+
+                                        }
+                                    }
+
+
+                                
+      out.write("\n");
+      out.write("                            </select>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"deptname\">Department</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <select id=\"deptname\" name=\"deptname\">\n");
+      out.write("                                <option value=\"\">Choose Department</option>\n");
+      out.write("                                ");
+
+                                    List<DepartmentinfoTO> all_details1 = new DepartmentinfoDAO().getAllRecord();
+                                    if (all_details1 != null) {
+                                        for (DepartmentinfoTO it : all_details1) {
+                                            out.println("<option value=\"" + it.getDeptid()+ "\">" + it.getDeptname()+ "</option>");
+
+                                        }
+                                    }
+
+
+                                
+      out.write("\n");
+      out.write("                            </select>\n");
+      out.write("                        </div>\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"dob\">Date of Birth</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"date\" name=\"dob\" id=\"dob\"  placeholder='Enter DOB..'  />\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"email\">Email ID</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"email\" name=\"email\" style=\"border-radius: 20px;\" placeholder=\"Enter Email ID..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"rarea\">Research Area</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"text\" id=\"rarea\" name=\"rarea\" style=\"border-radius: 20px;\" placeholder=\"Enter Research Area..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <div class=\"col-25\">\n");
+      out.write("                            <label for=\"sphoto\">Student Photo</label>\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"col-75\">\n");
+      out.write("                            <input type=\"file\" id=\"sphoto\" name=\"sphoto\" style=\"border-radius: 20px;\" placeholder=\"Enter Student Photo..\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <br>\n");
+      out.write("                    <hr>\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <br><input type=\"submit\" value=\"Create Student\">\n");
+      out.write("                    </div>\n");
+      out.write("\n");
+      out.write("                </div>\n");
+      out.write("                <div color=\"cyan\">\n");
+      out.write("                    ");
       out.write("\n");
       out.write("<div class=\"container-fluid\" style=\"border-radius: 35px;\">\n");
       out.write("    <div class=\"copyright\" style=\"height:70px;background-color: teal;border-radius: 25px;\"><br>                                 \n");
@@ -368,9 +491,9 @@ public final class addstudent_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("</div>\n");
       out.write("\n");
+      out.write("                </div>\n");
       out.write("            </div>\n");
-      out.write("       </div>\n");
-      out.write("            </form>\n");
+      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

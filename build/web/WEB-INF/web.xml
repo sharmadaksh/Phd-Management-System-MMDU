@@ -35,22 +35,30 @@
    <url-pattern>/admin/createinstitute</url-pattern>
 </servlet-mapping>
 <servlet>
+   <servlet-name>AddDepartment</servlet-name>
+   <servlet-class>controller.admin.insert.AddDepartment</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>AddDepartment</servlet-name>
+   <url-pattern>/admin/createdepartment</url-pattern>
+</servlet-mapping>
+
+<servlet>
    <servlet-name>AddStudent</servlet-name>
    <servlet-class>controller.admin.insert.AddStudentDetails</servlet-class>
 </servlet>
-
 <servlet-mapping>
    <servlet-name>AddStudent</servlet-name>
    <url-pattern>/admin/createstudent</url-pattern>
 </servlet-mapping>
 
-    <servlet>
+<servlet>
    <servlet-name>CheckLogin</servlet-name>
-   <servlet-class>controller.admin.CheckLogin</servlet-class>
+   <servlet-class>controller.CheckLogin</servlet-class>
 </servlet>
-
 <servlet-mapping>
-   <servlet-name>CheckLogin</servlet-name>
-   <url-pattern>/admin/checklogin</url-pattern>
+   <servlet-name>AddStudent</servlet-name>
+   <url-pattern>/admin/createstudent</url-pattern>
 </servlet-mapping>
 </web-app>

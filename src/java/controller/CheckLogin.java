@@ -40,11 +40,16 @@ public class CheckLogin extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         boolean failure = true;
+        System.out.println("Username "+username);
+        System.out.println("Password "+password);
         String message = "";
         if (username != null && password != null) {
+            System.out.println("++++++++++++++++++++++++++++1111111111");
             if (Validations.isEmpty(username) || Validations.isEmpty(password)) {
+                System.out.println("++++++++++++++++++++++++++++222222222");
                 message = "Please Enter Some Value in Boxes";
             } else {
+                System.out.println("++++++++++++++++++++++++++++333333333");
                 LogininfoTO record = new LogininfoDAO().getRecord(username);
                 if (record != null) {
                     if (record.getPassword().equals(password)) {
@@ -53,10 +58,11 @@ public class CheckLogin extends HttpServlet {
                             session.setAttribute("aname", username);
                             response.sendRedirect("admin/addlogindetails.jsp");
                             failure = false;
-                        } else if (record.getRolename().equalsIgnoreCase("user")) {
+                        } else if (record.getRolename().equalsIgnoreCase("scholar")) {
+                            System.out.println("++++++++++++++++++++++++++++44444444");
                             HttpSession session = request.getSession();
                             session.setAttribute("uname", username);
-                            response.sendRedirect("user/index.jsp");
+                            response.sendRedirect("scholar/scholarhome.jsp");
                             failure = false;
                         } else {
                             message = "Invalid Credential for User";

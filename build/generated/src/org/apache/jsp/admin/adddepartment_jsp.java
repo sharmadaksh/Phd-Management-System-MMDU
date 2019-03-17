@@ -191,6 +191,8 @@ public final class adddepartment_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <a href=\"addphdstep.jsp\">Phd Step Addition</a><br>\n");
       out.write("  <a href=\"addstream.jsp\">Stream Creation</a><br>\n");
       out.write("  <a href=\"addstudent.jsp\">Student Creation</a><br>\n");
+      out.write("  <a href=\"addinstittute.jsp\">Institute Creation</a><br>\n");
+      out.write("  <a href=\"adddepartment.jsp\">Department Creation</a><br>\n");
       out.write("  <a href=\"viewlogindetails.do\">View Login Details</a><br>\n");
       out.write("  <a href=\"viewstreamdetails.do\">View Stream Details</a><br>\n");
       out.write("  <a href=\"viewphdsteps.do\">View Ph.D Steps</a><br>\n");
@@ -227,7 +229,7 @@ public final class adddepartment_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("      <h2>Department Creation Portal</h2>\n");
       out.write("    <div class=\"row\">\n");
       out.write("      <div class=\"col-25\">\n");
-      out.write("        <label for=\"stepid\">Department ID</label>\n");
+      out.write("        <label for=\"deptid\">Department ID</label>\n");
       out.write("      </div>\n");
       out.write("      <div class=\"col-75\">\n");
       out.write("        <input type=\"text\" id=\"deptid\" name=\"deptid\" placeholder=\"Enter Department Id..\">\n");
@@ -256,8 +258,6 @@ public final class adddepartment_jsp extends org.apache.jasper.runtime.HttpJspBa
                                 
                     }                    
                 }
-                
-                
               
       out.write("\n");
       out.write("        </select>\n");

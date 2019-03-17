@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model.to;
+import  java.sql.Date;
 
 public class StudentInfoTO {
     private String studentid;
@@ -14,8 +15,91 @@ public class StudentInfoTO {
     private int sessionendmonth;
     private int sessionbeginyear;
     private int sessionendyear;
-    private String streamid;
+    private String contact;
+    private String aadhar;
+    private String pan;
+    private String category;
+    private String instname;
+    private String deptname;
+    private Date dob;
+    private String  email;
+    private String rarea;
 
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getAadhar() {
+        return aadhar;
+    }
+
+    public void setAadhar(String aadhar) {
+        this.aadhar = aadhar;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+   
+
+    public String getPan() {
+        return pan;
+    }
+
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getInstname() {
+        return instname;
+    }
+
+    public void setInstname(String instname) {
+        this.instname = instname;
+    }
+
+    public String getDeptname() {
+        return deptname;
+    }
+
+    public void setDeptname(String deptname) {
+        this.deptname = deptname;
+    }
+
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRarea() {
+        return rarea;
+    }
+
+    public void setRarea(String rarea) {
+        this.rarea = rarea;
+    }
+    
     public String getStudentid() {
         return studentid;
     }
@@ -80,11 +164,4 @@ public class StudentInfoTO {
         this.sessionendyear = sessionendyear;
     }
 
-    public String getStreamid() {
-        return streamid;
-    }
-
-    public void setStreamid(String streamid) {
-        this.streamid = streamid;
-    }
 }

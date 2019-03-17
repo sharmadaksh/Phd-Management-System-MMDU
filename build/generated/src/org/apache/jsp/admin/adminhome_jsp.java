@@ -30,7 +30,7 @@ public final class adminhome_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -44,15 +44,13 @@ public final class adminhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("<head>\n");
-      out.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("\n");
       out.write("<style>\n");
       out.write("body {\n");
       out.write("  \n");
       out.write("    font-family: \"Lato\", sans-serif;\n");
       out.write("    transition: background-color .5s;\n");
+      out.write("    \n");
       out.write("}\n");
       out.write("\n");
       out.write("p {\n");
@@ -161,19 +159,19 @@ public final class adminhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write(".show {display:block;}\n");
       out.write("</style>\n");
-      out.write("</head>\n");
-      out.write("<body bgcolor=\"white\">\n");
       out.write("\n");
       out.write("<div id=\"mySidenav\" class=\"sidenav\">\n");
       out.write("    <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a><br><br>\n");
       out.write("    <a href=\"WelcomeAdmin.jsp\">Home</a><br>\n");
-      out.write("    <a href=\"AddLoginDetails.jsp\">Login Creation</a><br>\n");
-      out.write("    <a href=\"AddPhdStep.jsp\">Phd Step Addition</a><br>\n");
-      out.write("  <a href=\"AddStream.jsp\">Stream Creation</a><br>\n");
-      out.write("  <a href=\"AddStudent.jsp\">Student Creation</a><br>\n");
-      out.write("  <a href=\"AddMentor.jsp\">Add Mentors</a><br>\n");
-      out.write("  <a href=\"ViewComplains.jsp\">View Complaints</a><br>\n");
-      out.write("  <a href=\"ViewFeedback.jsp\">View Feedback</a><br>\n");
+      out.write("    <a href=\"addlogindetails.jsp\">Login Creation</a><br>\n");
+      out.write("    <a href=\"addphdstep.jsp\">Phd Step Addition</a><br>\n");
+      out.write("  <a href=\"addstream.jsp\">Stream Creation</a><br>\n");
+      out.write("  <a href=\"addstudent.jsp\">Student Creation</a><br>\n");
+      out.write("  <a href=\"addinstittute.jsp\">Institute Creation</a><br>\n");
+      out.write("  <a href=\"adddepartment.jsp\">Department Creation</a><br>\n");
+      out.write("  <a href=\"viewlogindetails.do\">View Login Details</a><br>\n");
+      out.write("  <a href=\"viewstreamdetails.do\">View Stream Details</a><br>\n");
+      out.write("  <a href=\"viewphdsteps.do\">View Ph.D Steps</a><br>\n");
       out.write("  <a href=\"http://localhost:8888/Final Phd Management System/\">Logout</a><br>\n");
       out.write("</div>\n");
       out.write("\n");
@@ -200,8 +198,6 @@ public final class adminhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("</script>\n");
       out.write("     \n");
-      out.write("</body>\n");
-      out.write("</html> \n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

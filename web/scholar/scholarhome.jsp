@@ -1,14 +1,15 @@
 <%-- 
-    Document   : AdminHome
-    Created on : Mar 2, 2018, 10:53:49 AM
-    Author     : HP PAVILION
+    Document   : scholarhome
+    Created on : Mar 11, 2019, 11:01:52 AM
+    Author     : Daksh
 --%>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	 
 
+<%@page import="model.to.StudentInfoTO"%>
+<%@page import="java.util.List"%>
 
+<%@page import="model.dao.StudentinfoDAO"%>
+<%@page import="model.to.StudentInfoTO"%>
+<!DOCTYPE html>
 <style>
 body {
   
@@ -126,17 +127,9 @@ p {
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
-    <a href="WelcomeAdmin.jsp"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;Home</a><br>
-    <a href="addlogindetails.jsp"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;Login Creation</a><br>
-    <a href="addphdstep.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Phd Step Addition</a><br>
-  <a href="addstream.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Stream Creation</a><br>
-  <a href="addstudent.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Student Creation</a><br>
-  <a href="addinstittute.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Institute Creation</a><br>
-  <a href="adddepartment.jsp"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;Department Creation</a><br>
-  <a href="viewlogindetails.do"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;View Login Details</a><br>
-  <a href="viewstreamdetails.do"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;View Stream Details</a><br>
-  <a href="viewphdsteps.do"><span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;&nbsp;View Ph.D Steps</a><br>
-  <a href="http://localhost:8888/Final Phd Management System/"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;&nbsp;Logout</a><br>
+    <a href="WelcomeAdmin.jsp">Home</a><br>
+    <a href="viewstudent.jsp">My Profile</a><br>
+    a href="http://localhost:8888/Final Phd Management System/">Logout</a><br>
 </div>
 
 <div id="main">
@@ -144,7 +137,13 @@ p {
     <hr width="100%" color="grey" size="2">
     <center><img src="../Images/logo-big.png" width="150" height="50"></center>
     
-  <span style="font-size:22px;cursor:pointer;color: black" onclick="openNav()">&#9776; Administrator Dashboard</span>
+  <span style="font-size:22px;cursor:pointer;color: black" onclick="openNav()">&#9776; 
+     
+      <%
+          String name=(String)session.getAttribute("uname");
+          StudentInfoTO students = new StudentinfoDAO().getRecord(name);
+          out.println( students.getName());
+      %> Dashboard</span>
 </div>
    
    
@@ -161,4 +160,3 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 </script>
-     

@@ -38,16 +38,17 @@ public class LogininfoDAO extends DAO {
     public boolean updateRecord(LogininfoTO record) {
         try {
             String query = "update logininfo ";
-            query += " set password=?,rolename=?,emailid=?,secque=?,secans=?";
+            query += " set password=?,rolename=?,lastlogin=?,emailid=?,secque=?,secans=?";
             query += " where username = ?";
             PreparedStatement stmt = DataConnection.getStatement(query);
-            stmt.setString(1, record.getPassword());
-            stmt.setString(2, record.getRolename());
-            stmt.setTimestamp(3, record.getLastlogin());
-            stmt.setString(4, record.getUsername());
+              
+           stmt.setString(1, record.getUsername());   
+            stmt.setString(2, record.getPassword()); 
+            stmt.setString(3, record.getRolename());
+            stmt.setTimestamp(4, record.getLastlogin()); 
             stmt.setString(5, record.getEmailid());
             stmt.setString(6, record.getSecque());
-            stmt.setString(7, record.getSecans());
+            stmt.setString(7, record.getSecans()); 
             boolean result = stmt.executeUpdate() > 0;
             stmt.close();
             return result;
@@ -136,5 +137,6 @@ stmt.setString(1,username);
             return null;
         }
     }
+   
 
 }

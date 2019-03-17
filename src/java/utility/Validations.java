@@ -39,7 +39,8 @@ public class Validations {
 	public static boolean isValidImage(String extension) {
 		if (extension != null) {
 			String extensions = "jpg,jpeg,png,bmp,gif";
-			return extensions.contains(extension.toLowerCase());
+                                                                System.out.println(""+extension+" " +extensions.indexOf(extension.toLowerCase()));
+			return extensions.indexOf(extension.toLowerCase()) > -1;
 		}
 		return false;
 	}

@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/admin/studentaddition.jsp</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/src/java/model/dao/DepartmentinfoDAO.java</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/admin/viewlogindetails.jsp</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/WEB-INF/web.xml</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/src/java/model/to/DepartmentinfoTO.java</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/admin/adddepartment.jsp</file>
-            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/admin/addinstittute.jsp</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/src/java/utility/Operations.java</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/css/main.css</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/admin/addstudent.jsp</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/web/forgot.jsp</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/src/java/model/to/LogininfoTO.java</file>
+            <file>file:/D:/Java%20Advanced/Phd%20Management%20System%20MMDU/src/java/model/dao/LogininfoDAO.java</file>
         </group>
     </open-files>
 </project-private>
